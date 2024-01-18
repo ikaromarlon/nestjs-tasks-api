@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ConfigService } from '@nestjs/config';
-import config from './config'
+import config from './config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -11,7 +11,7 @@ import { TasksModule } from './tasks/tasks.module';
   imports: [
     ConfigModule.forRoot({
       load: [config],
-      isGlobal: true
+      isGlobal: true,
     }),
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
@@ -20,7 +20,7 @@ import { TasksModule } from './tasks/tasks.module';
       }),
       inject: [ConfigService],
     }),
-    TasksModule
+    TasksModule,
   ],
   controllers: [AppController],
   providers: [AppService],

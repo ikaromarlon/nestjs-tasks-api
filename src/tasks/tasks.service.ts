@@ -6,10 +6,10 @@ import { CreateTaskDto } from './tasks.dto';
 
 @Injectable()
 export class TasksService {
-  constructor(@InjectModel(Task.name) private taskModel: Model<Task> ) {}
+  constructor(@InjectModel(Task.name) private taskModel: Model<Task>) {}
 
   async create(createTask: CreateTaskDto) {
-    const task = new this.taskModel(createTask)
-    return task.save()
+    const task = new this.taskModel(createTask);
+    return task.save();
   }
 }

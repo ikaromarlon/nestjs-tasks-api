@@ -1,25 +1,25 @@
-import { Schema, Prop, SchemaFactory } from "@nestjs/mongoose"
+import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
 
 @Schema({
-  timestamps: true
+  timestamps: true,
 })
 export class Task {
   @Prop({
     unique: true,
     required: true,
-    trim: true
+    trim: true,
   })
-  title: string
+  title: string;
 
   @Prop({
-    trim: true
+    trim: true,
   })
-  description: string
+  description: string;
 
   @Prop({
-    default: false
+    default: false,
   })
-  done: boolean
+  done: boolean;
 }
 
-export const TaskSchema = SchemaFactory.createForClass(Task)
+export const TaskSchema = SchemaFactory.createForClass(Task);
