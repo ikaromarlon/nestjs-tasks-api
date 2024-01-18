@@ -22,6 +22,6 @@ export class TasksService {
   }
 
   async update(id: string, updateTask: UpdateTaskDto): Promise<Task> {
-    return this.taskModel.findByIdAndUpdate(id, updateTask)
+    return this.taskModel.findByIdAndUpdate(id, updateTask, { new: true })
   }
 }
