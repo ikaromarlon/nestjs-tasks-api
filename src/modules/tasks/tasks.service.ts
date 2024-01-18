@@ -18,14 +18,14 @@ export class TasksService {
   }
 
   async findOne(id: string): Promise<Task> {
-    return this.taskModel.findById(id)
+    return this.taskModel.findById(id);
   }
 
   async update(id: string, updateTask: UpdateTaskDto): Promise<Task> {
-    return this.taskModel.findByIdAndUpdate(id, updateTask, { new: true })
+    return this.taskModel.findByIdAndUpdate(id, updateTask, { new: true });
   }
 
   async delete(id: string): Promise<Task> {
-    return this.taskModel.findByIdAndDelete(id)
+    return this.taskModel.findByIdAndDelete(id);
   }
 }
