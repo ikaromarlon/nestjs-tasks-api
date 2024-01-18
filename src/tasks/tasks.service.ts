@@ -12,4 +12,8 @@ export class TasksService {
     const task = new this.taskModel(createTask);
     return task.save();
   }
+
+  async findAll() {
+    return this.taskModel.find();
+  }
 }
